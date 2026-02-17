@@ -8,6 +8,7 @@ public class Main {
             System.out.println("Main menu");
             System.out.println("1) Guess the Number");
             System.out.println("2) Quiz Game");
+            System.out.println("3) Adjective story");
             System.out.println("0) Exit");
             System.out.print("Choose: ");
 
@@ -16,6 +17,7 @@ public class Main {
             switch (choice) {
                 case "1" -> new GuessNumber(scanner).run();
                 case "2" -> new QuizGame(scanner).run();
+                case "3" -> new AdjectiveStory(scanner).run();
                 case "0" -> {
                     System.out.println("Bye Bye dude");
                     scanner.close();

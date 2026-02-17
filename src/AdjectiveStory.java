@@ -10,11 +10,13 @@ public class AdjectiveStory {
 
     }
 
-    private void run() {
+    public void run() {
         System.out.println("This is an Adjective story, where the adjectives you insert will be added to a premade story.");
         System.out.println("Please tell me how many words you will like to insert (1-3 words)");
         int wordCount = scanner.nextInt();
-        adjectives(wordCount);
+        scanner.nextLine(); // eats the next empty input from \n
+
+        Story(adjectives(wordCount));
     }
 
     private List<String> adjectives(int wordCount) {
@@ -27,11 +29,20 @@ public class AdjectiveStory {
         return words;
     }
 
-    private String Story (List<String> wordsList) {
+    private void Story (List<String> wordsList) {
         String fullStory = "";
-        for (String word : wordsList) {
+        List<String> rawStory = new ArrayList<>();
+        rawStory.add("I am ");
+        rawStory.add(". And you are ");
+        rawStory.add(". That makes us ");
 
+        int i = 0;
+        for (String s : wordsList) {
+            fullStory += rawStory.get(i) + s;
+            i ++;
         }
+        System.out.println("Here is your Adjective story:");
+        System.out.println(fullStory);
     }
 
 }
